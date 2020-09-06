@@ -1,0 +1,265 @@
+<html>
+<head>
+<title>my page</title>
+    <style>
+        *{
+            box-sizing: border-box
+        }
+        input{
+           width:320;
+            height: 90;
+            margin-bottom: 5px;
+            font-size: 30px;
+       background: #eee;
+            font-weight: bold;
+            border: 3px solid black
+            
+        }
+        body{
+            background: #eee
+        }
+        .main{
+            text-align: center;
+            width: 400;
+            height: 400;
+            margin: 80px auto;
+           /* padding: 30px*/
+            position: relative;
+        }
+        button{
+           width: 60px;
+            height: 60px;
+            margin-bottom: 5px;
+         /* text-align: center;*/
+            font-size: 22px;
+           background: #eee;
+            border: 3px solid black
+        }
+        
+       
+        
+        button:hover,button:active{
+            font-weight: bold;
+           /* font-size: 25;*/
+           /* padding: 10px;*/
+            background: rgb(119, 119, 119,.5)
+        }
+        
+       
+      
+        h1{
+         
+            text-align: center;
+            color: black;
+            font-size: 100px
+        }
+        #sound{
+            display: none
+        }
+        
+    </style>
+</head>
+<body>
+   <audio id ="sound" controls autoplay><source src="#"/></audio>
+
+  <h1>calculator</h1> 
+ <div class="main"> 
+  <input type="text" id="txt"/><br>
+  
+   <button type="reset" id="reset" value="c" onclick="myset();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >c</button>
+    <button value="/" id="divid" onclick="mydivid()" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''">/</button>
+  <button value="*" id="multiple" onclick="mymultiple();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''">*</button>
+ <button value="-" id="sub" onclick=" mysub();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''">-</button> 
+    <button value="+" id="plus" onclick="myadd();"onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >+</button><br>
+ 
+    
+
+
+    
+    <button  id="btn1"  value="1" onclick="sayhello()" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >1</button>
+    <button type="button" value="2" id="btn2" onclick="mybtn2();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >2</button>
+     <button id="btn3" value="3" onclick="mybtn3();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >3</button>
+       <button value="4" id="btn4" onclick="mybtn4()" style="padding: 15px 17px" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >4</button>
+  
+        
+ <button id="decimel" value="." onclick="mydecimel();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >.</button>     
+                
+                
+   <br>
+        
+    
+     <button value="5" id="btn5" onclick="mybtn5()" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >5</button>
+     <button value="6" id="btn6" onclick="mybtn6()" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >6</button>
+   
+
+ 
+
+      
+      
+     <button value="7" id="btn7" onclick="mybtn7()" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >7</button>
+    <button value="8" id="btn8" onclick="mybtn8();" style="padding:15px 17px"onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''"  >8</button>
+   
+        <button value=")" id="cote1" onclick="mycote1();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >)</button>
+        
+        
+<br>
+
+
+        <button value="9" id="btn9" onclick="mybtn9();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >9</button>     
+      <button value="0" id="btn0" onclick="mybtn0();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >0</button> 
+        
+     
+   
+     <button value="=" id="equal" onclick="myequal();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" >=</button>
+   <button value="%" id="persent" onclick="mypersent();" style="padding:15px"onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''"  >%</button> 
+        <button value="( " id="cote2" onclick="mycote2();" onmousedown="window.sound.src='%D8%B5%D9%88%D8%AA%20%D9%84%D9%88%D8%AD%D8%A9%20%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%AA%D9%8A%D8%AD%20-%20%D8%B5%D9%88%D8%AA%20%D8%A7%D8%B2%D8%B1%D8%A7%D8%B1%20%D9%84%D9%88%D8%AD%20%D8%A7%D9%84%D9%83%D9%8A%D8%A8%D9%88%D8%B1%D8%AF%20.mp3'" onmouseup="window.sound.src=''" ">( </button>
+</div>   
+   
+
+<script>
+    function sayhello() {
+        var num1=window.btn1.value;
+       
+         window.txt.value+=num1;
+    } 
+   function mybtn2() {
+       var num2=window.btn2.value;
+       
+         window.txt.value+=num2; 
+       var input=window.txt.value;
+   } 
+    function mybtn3() {
+        var num3=window.btn3.innerHTML;
+       
+         window.txt.value+=num3; 
+
+    }
+     function mybtn4() {
+        var num4=window.btn4.innerHTML;
+       
+         window.txt.value+=num4; 
+
+    }
+     function mybtn5() {
+        var num5=window.btn5.innerHTML;
+       
+         window.txt.value+=num5; 
+
+    }
+     function mybtn6() {
+        var num6=window.btn6.innerHTML;
+       
+         window.txt.value+=num6; 
+
+    }
+    function mybtn7() {
+        var num7=window.btn7.innerHTML;
+       
+         window.txt.value+=num7; 
+
+        
+    }
+    function mybtn8() {
+        var num8=window.btn8.innerHTML;
+       
+         window.txt.value+=num8; 
+
+    }
+    function mybtn9() {
+        var num9=window.btn9.innerHTML;
+       
+         window.txt.value+=num9; 
+
+    } 
+    function mybtn0() {
+        var num0=window.btn0.innerHTML;
+       
+         window.txt.value+=num0; 
+
+    }
+      function mydecimel() {
+        var mydecimel=window.decimel.innerHTML;
+       
+         window.txt.value+=mydecimel; 
+
+    }
+    
+     function myset() {
+        
+       
+         window.txt.value=""; 
+
+    }
+     function myadd() {
+        var add=window.plus.innerHTML;
+       
+         window.txt.value+=add; 
+
+    }
+   
+     function myequal() {
+     
+       var input= window.txt.value;
+         window.txt.value=eval(input); 
+         if (eval(input)=="Infinity"){
+            window.txt.value="invalid operation" ; 
+         }
+    
+    }
+    function mysub() {
+    var mysub=window.sub.innerHTML;
+       
+         window.txt.value+= mysub; 
+
+    }
+     function mydivid() {
+ 
+    var divid=window.divid.innerHTML;
+       
+         window.txt.value+=divid; 
+     
+        
+       
+
+    }
+     function mymultiple() {
+    var mymultiple=window.multiple.innerHTML;
+       
+         window.txt.value+=mymultiple; 
+
+    } 
+  
+  function mypersent() {
+   
+     var mypersent=window.persent.value;
+              
+ window.txt.value+=mypersent; 
+
+ } 
+ function mycote1() {
+   
+     var mycote1=window.cote1.value;
+              
+ window.txt.value+=mycote1; 
+
+ } 
+    function mycote2() {
+   
+     var mycote2=window.cote2.value;
+              
+ window.txt.value+=mycote2; 
+
+ } 
+ 
+ function myback() {
+   
+     var input=input.pop();
+              
+ window.txt.value=input; 
+
+ } 
+    
+    
+</script>
+</body>
+</html>
